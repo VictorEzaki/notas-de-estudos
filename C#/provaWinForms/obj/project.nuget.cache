@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "QqAD21Y+SOU=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Victo\\repos\\jovemProgramador\\C#\\provaWinForms\\provaWinForms.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Victo\\.nuget\\packages\\mysqlconnector\\2.2.5\\mysqlconnector.2.2.5.nupkg.sha512"
+  ],
+  "logs": []
+}

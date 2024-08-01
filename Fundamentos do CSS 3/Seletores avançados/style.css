@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+li:nth-child(2) {
+    color: aqua;
+}
+
+li:nth-child(3n) {
+    color: red;
+}
+
+li:hover {
+    background-color: #777;
+    display: inline-block;
+    color: #fff;
+}
+
+input:focus {
+    background-color: red;
+}
+
+li::before {
+    content:"(Antes) ";
+}
+
+li::after {
+    content: " (Depois)"
+}
+
+li:first-child {
+    color: brown;
+}
+
+li:last-child {
+    color: brown;
+}
+
+li:not(:first-child) {
+    color: red;
+}

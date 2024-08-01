@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição</title>
+</head>
+<body>
+
+    <header>
+        <h1>Formulário de inscrição</h1>
+    </header>
+
+    <main>
+        <form action="#" method="post">
+            <section>
+                <div>
+                    <label for="nome">Nome:</label><br>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <br>
+                <div>
+                    <label for="email">E-mail:</label><br>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <br>
+                <div>
+                    <label for="telefone">Whatsapp:</label><br>
+                    <input type="text" id="telefone" name="telefone" required placeholder="(00) 0 00000000">
+                </div>
+            </section>
+            <br>
+            <section>
+                <div>
+                    <label>Área de atuação:</label><br>
+                    <input type="radio" id="desenvolvimento" name="atuacao" value="desenvolvimento" required>
+                    <label for="desenvolvimento">Desenvolvimento</label>
+                    <input type="radio" id="qualityAssurance" name="atuacao" value="qualityAssurance" required>
+                    <label for="qualityAssurance">Quality Assurance (QA)</label>
+                    <input type="radio" id="analiseDeDados" name="atuacao" value="analiseDeDados" required>
+                    <label for="analiseDeDados">Análise De Dados</label>
+                    <input type="radio" id="infraestrutura" name="atuacao" value="infraestrutura" required>
+                    <label for="infraestrutura">Infraestrutura</label>
+                </div>
+            </section>
+            <br>
+            <section>
+                <label for="obs">Observações:</label><br>
+                <textarea name="observações" id="obs" cols="19" rows="2"></textarea>
+            </section>
+            <br>
+            <div>
+                <input type="checkbox" name="aceito" id="news">
+                <label for="news">Aceito receber ofertas e novidades por e-mail.</label>
+            </div>
+            <br><br>
+            <button type="submit">Enviar</button>
+            
+        </form>
+
+        <address>
+            <p>Entre em contato conosco:</p>
+            <p>Endereço: Rua joinville, 123
+            </p>
+            <p>Email: exemplo@gmail.com</p>
+            <p>Telefone: (47) 9 9999-9999</p>
+        </address>
+
+    </main>
+
+    <footer>
+        <p>&copy; Victor Takeyoshi Kieper Ezaki - 2024</p>
+    </footer>
+    
+</body>
+</html>
