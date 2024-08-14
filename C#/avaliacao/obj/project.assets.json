@@ -8,23 +8,23 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\victor.ezaki\\.nuget\\packages\\": {},
+    "C:\\Users\\Victo\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\victor.ezaki\\Documents\\jovemProgramador\\c#\\avaliacao\\avaliacao.csproj",
+      "projectUniqueName": "C:\\Users\\Victo\\repos\\notas-de-estudos\\C#\\avaliacao\\avaliacao.csproj",
       "projectName": "avaliacao",
-      "projectPath": "C:\\Users\\victor.ezaki\\Documents\\jovemProgramador\\c#\\avaliacao\\avaliacao.csproj",
-      "packagesPath": "C:\\Users\\victor.ezaki\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\victor.ezaki\\Documents\\jovemProgramador\\c#\\avaliacao\\obj\\",
+      "projectPath": "C:\\Users\\Victo\\repos\\notas-de-estudos\\C#\\avaliacao\\avaliacao.csproj",
+      "packagesPath": "C:\\Users\\Victo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Victo\\repos\\notas-de-estudos\\C#\\avaliacao\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\victor.ezaki\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Victo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -72,7 +72,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
