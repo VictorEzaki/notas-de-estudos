@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    min-height: 100vh;
+    background-color: darkgray;
+    display: flex;
+    flex-direction: column;
+}
+
+.paragraph{
+    font-size: 30px;
+}
+
+.header{
+    flex-basis: 100%;
+    padding: 10px;
+    background-color: white;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+}
+
+main{
+    flex: 1 0 400px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+
+    /* este deixa espaço no centro entre as duas colunas de itens */
+    /* align-items: center; */
+
+    /* Já este não, centraliza as duas colunas no meio da tela */
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.footer{
+    flex-basis: 100%;
+    padding: 10px;
+    background-color: white;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+}
+
+.itens{
+    background-color: white;
+    width: 400px;
+    height: 200px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
