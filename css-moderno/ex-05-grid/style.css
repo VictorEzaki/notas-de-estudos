@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: darkgray;
+    min-height: 100vh;
+}
+
+header{
+    background-color: white;
+    border: 2px solid black;
+    height: 60px;
+    width: 100%;
+}
+
+main{
+    /* "atalho" para: flex-grow (valor padrão: n), flex-shrink (valor padrão: 1) e flex-basis (valor padrão: 0). */
+    flex: 1 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    grid-auto-rows: minmax(190px, auto);
+    padding: 10px;
+    grid-template-areas: 
+        "item-1 item-2 item-3"
+        "item-4 item-4 item-4"
+        "item-5 item-5 item-6";
+}
+
+.itens{
+    background-color: white;
+    border: 2px solid black;
+}
+
+#item-4{
+    grid-area: item-4;
+}
+
+#item-5{
+    grid-area: item-5;
+}
+
+footer{
+    background-color: white;
+    border: 2px solid black;
+    height: 60px;
+    width: 100%;
+}
