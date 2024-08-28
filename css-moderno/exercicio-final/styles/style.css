@@ -1,0 +1,72 @@
+*{
+    box-sizing: border-box;
+}
+
+.header{
+    background-color: #121212;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.logo-onebitcode{
+    width: 200px;
+    height: auto;
+}
+
+.nav{
+    display: flex;
+    gap: 1rem;
+}
+
+nav>a{
+    text-decoration: none;
+    color: white;
+    margin-top: 0.5rem;
+    height: 1rem;
+}
+
+a:hover{
+    border-bottom: 2px solid darkgray;
+}
+
+.main-title{
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+.main-subtitle{
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.layout{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.grid-layout{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(200px, auto);
+}
+
+.grid-itens{
+    /* width: 100px; */
+}
+
+.img-sports{
+    width: 10rem;
+}
+
+.flex-layout{
+    background-color: #121212;
+    padding: 2rem;
+}
+
+.flex-itens{
+    width: 150px;
+}
