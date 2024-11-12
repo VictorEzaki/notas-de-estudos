@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #212529;
+    --border-color: #666;
+    --font-color: #f1f5f9;
+    --primary-color: #4dff91;
+    --error-color: #ff0043;
+}
+
+#container {
+    position: relative;
+    background-color: var(--bg-color);
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 4rem;
+    color: var(--font-color);
+}
+
+.overlay {
+    background-color: rgb(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-overlay {
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    color: black;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 1rem;
+}
+
+.overlay .content-overlay #ready {
+    background-color: var(--primary-color);
+    width: 5rem;
+    border: none;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+}
+
+.overlay .content-overlay #ready:hover {
+    cursor: pointer;
+    filter: brightness(0.9);
+}
+
+#title {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    border-bottom: 1px solid white;
+}
+
+#player-1,
+#player-2 {
+    border: 1px solid var(--border-color);
+    outline: none;
+    height: 2rem;
+    border-radius: 0.2rem;
+}
+
+
+
+#board-game {
+    background-color: white;
+    display: grid;
+    grid-template-columns: 6rem 6rem 6rem;
+    grid-template-rows: 6rem 6rem 6rem;
+    gap: .5rem;
+    margin-bottom: 1.5rem;
+    max-width: 19rem;
+}
+
+#board-game span {
+    background-color: var(--bg-color);
+    display: grid;
+    place-content: center;
+    font-size: 5rem;
+}
+#board-game span {
+    cursor: pointer;
+}
+
+#board-game .win {
+    background-color: var(--primary-color);
+}
+
+#content-winner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+#recomecar{
+    background-color: var(--primary-color);
+    width: 5rem;
+    border: none;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+}
+#recomecar:hover{
+    cursor: pointer;
+    filter: brightness(0.9);
+}
+
+.player-1-color{
+    background-color: blue;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+}
+
+.player-2-color{
+    background-color: red;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+}

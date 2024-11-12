@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./index.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="container">
+        <div class="overlay">
+            <div class="content-overlay">
+                <h1>Insira o nome dos jogadores</h1>
+                <label for="player-1">X</label>
+                <input type="text" id="player-1" placeholder="Nome do jogador 1">
+                <label for="player-2">O</label>
+                <input type="text" id="player-2" placeholder="Nome do jogador 2"><br>
+                <button id="ready" onclick="Off()">Começar</button>
+            </div>
+        </div>
+        <h1 id="title">Jogo da velha</h1>
+        <h2>Vez de: <span id="turn-player"></span></h2>
+        <div id="board-game">
+            <span data-region="0.0"></span>
+            <span data-region="0.1"></span>
+            <span data-region="0.2"></span>
+            <span data-region="1.0"></span>
+            <span data-region="1.1"></span>
+            <span data-region="1.2"></span>
+            <span data-region="2.0"></span>
+            <span data-region="2.1"></span>
+            <span data-region="2.2"></span>
+        </div>
+
+        <div id="winner">
+            <div id="content-winner">
+                <h3 id="player-name"></h3>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
