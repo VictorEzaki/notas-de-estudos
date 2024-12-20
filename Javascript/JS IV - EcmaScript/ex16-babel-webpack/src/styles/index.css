@@ -1,0 +1,30 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    min-height: 100vh;
+    background-color: #232323;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.questions{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.questions div{
+    border: 1px solid aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
