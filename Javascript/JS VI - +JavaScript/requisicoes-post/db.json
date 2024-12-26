@@ -1,0 +1,40 @@
+{
+  "articles": [
+    {
+      "id": "1",
+      "title": "Olá, Mundo!",
+      "content": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam ratione laudantium eligendi asperiores? Quis, architecto totam quos similique atque illum eum autem ex illo odit in beatae tenetur voluptate rem!",
+      "author": "Victor"
+    },
+    {
+      "id": "2",
+      "title": "Requisições POST com JavaScript",
+      "content": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam ratione laudantium eligendi asperiores? Quis, architecto totam quos similique atque illum eum autem ex illo odit in beatae tenetur voluptate rem!",
+      "author": "Ezaki"
+    },
+    {
+      "id": "1569",
+      "title": "testando",
+      "author": "teste",
+      "content": "lorem ipsum..."
+    },
+    {
+      "id": "563f",
+      "title": "asdas",
+      "author": "dsada",
+      "content": "aaaa"
+    },
+    {
+      "id": "56e3",
+      "title": "sss",
+      "author": "sss",
+      "content": "sss"
+    },
+    {
+      "id": "b453",
+      "title": "POr que funciona???",
+      "author": "Ezaki",
+      "content": "sla"
+    }
+  ]
+}
