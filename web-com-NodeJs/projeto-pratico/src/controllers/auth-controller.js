@@ -1,13 +1,14 @@
 const jwt = require("jsonwebtoken")
 const usersModel = require("../models/users-model")
 const bcrypt = require('bcrypt')
+const HttpError = require("../errors/HttpError")
 
 module.exports = {
     register: (req, res) => {
         const { name, email, password } = req.body
 
         if (typeof name !== 'string' || typeof email !== 'string' || typeof password !== 'string') {
-            return res.status(400).json({ message: 'Invalid fields!' })
+           throw new HttpError(400, 'Invalid fields!')
         }
 
         const existingUser = usersModel.findByEmail(email)
@@ -23,7 +24,7 @@ module.exports = {
         const { email, password } = req.body
 
         if (typeof email !== 'string' || typeof password !== 'string') {
-            return res.status(400).json({ message: 'Invalid fields!' })
+            throw new HttpError(400, 'Invalid fields!')
         }
 
         const user = usersModel.findByEmail(email)
