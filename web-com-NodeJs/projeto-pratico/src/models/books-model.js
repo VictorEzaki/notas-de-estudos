@@ -3,10 +3,10 @@ const HttpError = require('../errors/HttpError')
 const uuid = require('uuid').v4
 
 let books = [
-    { id: '1', title: 'Booke One', author: 'Author One', quantityAvable: 4 },
-    { id: '3', title: 'Booke Two', author: 'Author Two', quantityAvable: 2 },
-    { id: '4', title: 'Booke Three', author: 'Author Three', quantityAvable: 1 },
-    { id: '5', title: 'Booke Four', author: 'Author Four', quantityAvable: 3 },
+    { id: '1', title: 'Booke One', author: 'Author One', quantityAvailable: 4 },
+    { id: '3', title: 'Booke Two', author: 'Author Two', quantityAvailable: 2 },
+    { id: '4', title: 'Booke Three', author: 'Author Three', quantityAvailable: 1 },
+    { id: '5', title: 'Booke Four', author: 'Author Four', quantityAvailable: 3 },
 ]
 
 module.exports = {
@@ -14,12 +14,12 @@ module.exports = {
 
     getBookById: (id) => books.find(book => book.id === id),
     
-    createBook: (title, author, quantityAvable) => {
+    createBook: (title, author, quantityAvailable) => {
         const newBook = {
             id: uuid(),
             title,
             author,
-            quantityAvable
+            quantityAvailable
         }
 
         books.push(newBook)
@@ -46,5 +46,21 @@ module.exports = {
         const deletedBook = books[bookIndex]
         books = books.filter(book => book.id !== id)
         return deletedBook
+    },
+
+    takeBook: (id) => {
+        const bookIndex = books.findIndex(book => book.id === id)
+        if (bookIndex === -1) {
+            throw new HttpError(404, 'Book not found in system!')
+        } 
+        books[bookIndex].quantityAvailable -= 1
+    },
+
+    returnBook: (id) => {
+        const bookIndex = books.findIndex(book => book.id === id)
+        if (bookIndex === -1) {
+            throw new HttpError(404, 'Book not found in system!')
+        } 
+        books[bookIndex].quantityAvailable += 1
     }
 }

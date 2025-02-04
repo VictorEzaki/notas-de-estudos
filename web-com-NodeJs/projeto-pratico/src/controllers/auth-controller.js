@@ -5,10 +5,13 @@ const HttpError = require("../errors/HttpError")
 
 module.exports = {
     register: (req, res) => {
-        const { name, email, password } = req.body
+        const { name, email, password, role } = req.body
 
-        if (typeof name !== 'string' || typeof email !== 'string' || typeof password !== 'string') {
-           throw new HttpError(400, 'Invalid fields!')
+        if (
+            typeof name !== 'string' || typeof email !== 'string' || typeof password !== 'string' || typeof role !== 'string' ||
+            !role.match(/^(employee|user)$/)
+        ) {
+            throw new HttpError(400, 'Invalid fields!')
         }
 
         const existingUser = usersModel.findByEmail(email)
@@ -16,7 +19,7 @@ module.exports = {
             return res.status(400).json({ message: 'E-mail already in use!' })
         }
 
-        const newUser = usersModel.createUser(name, email, password)
+        const newUser = usersModel.createUser(name, email, password, role)
         res.status(201).json({ ...newUser, password: undefined })
     },
 

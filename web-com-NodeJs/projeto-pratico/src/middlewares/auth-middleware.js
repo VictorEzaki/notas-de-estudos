@@ -21,5 +21,13 @@ module.exports = {
         } catch (error) {
             return res.status(401).json({ message: 'Invalid token!' })
         }
+    },
+
+    ensureEmployee: (req, res, next) => {
+        if (req.user?.role === 'employee') {
+            next()
+        } else {
+            return res.status(403).json({ message: 'Permission denied!' })
+        }
     }
 }
