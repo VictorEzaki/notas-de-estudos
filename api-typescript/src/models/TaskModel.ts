@@ -1,7 +1,7 @@
 interface TaskAttributes {
     id: number;
     title: string;
-    descripttion: string;
+    description: string;
     status: "todo" | "doing" | "done";
     priority: "low" | "medium" | "high";
     createdAt: Date;
@@ -9,12 +9,12 @@ interface TaskAttributes {
 }
 
 export class Task {
-    private static tasks: Task[];
+    private static tasks: Task[] = [];
     private static sequence: number = 1;
 
     id: number;
     title: string;
-    descripttion: string;
+    description: string;
     status: "todo" | "doing" | "done";
     priority: "low" | "medium" | "high";
     createdAt: Date;
@@ -23,7 +23,7 @@ export class Task {
     constructor(attributes: TaskAttributes) {
         this.id = attributes.id;
         this.title = attributes.title;
-        this.descripttion = attributes.descripttion;
+        this.description = attributes.description;
         this.status = attributes.status;
         this.priority = attributes.priority;
         this.createdAt = attributes.createdAt;
@@ -39,11 +39,11 @@ export class Task {
     }
 
     static create(attributes: Omit<TaskAttributes, "id" | "createdAt" | "updatedAt">): Task {
-        const { title, descripttion, status, priority } = attributes;
+        const { title, description, status, priority } = attributes;
         const newTask = new Task({
             id: this.sequence++,
             title,
-            descripttion,
+            description,
             status,
             priority,
             createdAt: new Date(),
@@ -55,7 +55,7 @@ export class Task {
     }
 
     static update(id: number, attributes: Partial<Omit<TaskAttributes, "id" | "createdAt" | "updatedAt">>): Task | null {
-        const { title, descripttion, status, priority } = attributes;
+        const { title, description, status, priority } = attributes;
 
         const task = this.findById(id);
         if (!task) {
@@ -63,7 +63,7 @@ export class Task {
         }
 
         if (title !== undefined) task.title = title;
-        if (descripttion !== undefined) task.descripttion = descripttion;
+        if (description !== undefined) task.description = description;
         if (status !== undefined) task.status = status;
         if (priority !== undefined) task.priority = priority;
         task.updatedAt = new Date();
