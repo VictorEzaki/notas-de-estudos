@@ -20,7 +20,8 @@ main() {
 		cout << "[8] Área do retângulo\n";
 		cout << "[9] Área do retângulo\n";
 		cout << "[10] Área do retângulo\n";
-		cout << "[11] Sair do programa\n";
+		cout << "[11] Desafio\n";
+		cout << "[12] Sair do programa\n";
 		cout << "\n------------------------------------------\n";
 		cout << "\nEscolha uma das opções: ";
 		cin >> chose;
@@ -129,7 +130,7 @@ main() {
 				cout << desenho;
 				break;
 			}
-			
+
 			case 12: {
 				cout << "Saindo...";
 				break;
