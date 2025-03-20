@@ -1,6 +1,11 @@
 #include <iostream>
 #include <iomanip>
+#include <string>
 using namespace std;
+
+void setColor(const string& colorCode) {
+    cout << "\033[" << colorCode << "m";
+}
 
 main() {
 	system("chcp 65001");
@@ -18,9 +23,9 @@ main() {
 		cout << "[6] Desconto progressivo\n";
 		cout << "[7] Dias do mês\n";
 		cout << "[8] Média do aluno\n";
-		cout << "[9] Área do retângulo\n";
-		cout << "[10] Área do retângulo\n";
-		cout << "[11] Desafio\n";
+		cout << "[9] Positivo ou negativo\n";
+		cout << "[10] Desafio1\n";
+		cout << "[11] Desafio2\n";
 		cout << "[12] Sair do programa\n";
 		cout << "\n------------------------------------------\n";
 		cout << "\nEscolha uma das opções: ";
@@ -283,11 +288,42 @@ main() {
 			}
 			
 			case 10: {
+				system("cls");
+				
+				int size = 10;
+				
+				cout << "Digite o tamanho do quadrado: ";
+				cin >> size;
+				cout << endl;
+				
+				for(int i = 0; i < size; i++) {
+					for(int j = 0; j < size; j++){
+						cout << "* ";
+					}
+					cout << endl;
+				}
 				
 				break;
 			}
 
 			case 11: {
+				system("cls");
+				
+				int size = 10;
+				
+				cout << "Digite o tamanho do quadrado: ";
+				cin >> size;
+				cout << endl;
+				
+				for(int i = 0; i < size; i++) {
+					for(int j = 0; j < size; j++){
+						setColor("3" + to_string(i + 1));
+						cout << "* ";
+					}
+					cout << endl;
+				}
+				
+				setColor("0");
 				break;
 			}
 
