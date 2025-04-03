@@ -34,6 +34,11 @@ main() {
 				do {
 					cout << "Digite o tamanho do quadrado: ";
 					cin >> size;
+
+					if(size < 0) {
+						system("cls");
+						cout << "Insira um valor válido, o sistema não aceita número negativos";
+					}
 					cout << endl;
 				} while(size < 0);
 
@@ -54,6 +59,11 @@ main() {
 				do {
 					cout << "Digite o tamanho do quadrado: ";
 					cin >> size;
+
+					if(size < 0) {
+						system("cls");
+						cout << "Insira um valor válido, o sistema não aceita número negativos";
+					}
 					cout << endl;
 				} while(size < 0);
 
@@ -74,8 +84,13 @@ main() {
 				system("cls");
 
 				do {
-					cout << "Digite o tamanho do quadrado: ";
+					cout << "Digite o tamanho da metade: ";
 					cin >> size;
+
+					if(size < 0) {
+						system("cls");
+						cout << "Insira um valor válido, o sistema não aceita número negativos";
+					}
 					cout << endl;
 				} while(size < 0);
 
@@ -93,8 +108,13 @@ main() {
 				system("cls");
 
 				do {
-					cout << "Digite o tamanho do quadrado: ";
+					cout << "Digite o tamanho do triângulo: ";
 					cin >> size;
+
+					if(size < 0) {
+						system("cls");
+						cout << "Insira um valor válido, o sistema não aceita número negativos";
+					}
 					cout << endl;
 				} while(size < 0);
 
@@ -118,8 +138,14 @@ main() {
 				system("cls");
 
 				do {
-					cout << "Digite o tamanho do quadrado: ";
+					cout << "Digite o tamanho do triângulo duplo: ";
 					cin >> size;
+
+					if(size < 0) {
+						system("cls");
+						cout << "Insira um valor válido, o sistema não aceita número negativos";
+					}
+					cout << endl;
 				} while(size < 0);
 				cout << "\n\n";
 
@@ -163,6 +189,12 @@ main() {
 				do {
 					cout << "Digite o tamanho da sequência: ";
 					cin >> size;
+
+					if(size < 0) {
+						system("cls");
+						cout << "Insira um valor válido, o sistema não aceita número negativos";
+					}
+					cout << endl;
 				} while(size < 0);
 				cout << "\n\n";
 
