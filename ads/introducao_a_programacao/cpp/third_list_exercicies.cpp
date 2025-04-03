@@ -4,7 +4,7 @@
 using namespace std;
 
 void setColor(const string& colorCode) {
-    cout << "\033[" << colorCode << "m";
+	cout << "\033[" << colorCode << "m";
 }
 
 main() {
@@ -12,7 +12,7 @@ main() {
 	cout << fixed << setprecision(2);
 
 	int chose;
-	while (chose != 12) {
+	do {
 		cout << "\n\n\n\tLista de exercícios Nº 3";
 		cout << "\n------------------------------------------\n";
 		cout << "[1] Quem é mais velho\n";
@@ -26,11 +26,13 @@ main() {
 		cout << "[9] Positivo ou negativo\n";
 		cout << "[10] Desafio1\n";
 		cout << "[11] Desafio2\n";
-		cout << "[12] Sair do programa\n";
+		cout << "[12] Desafio3\n";
+		cout << "[13] Desafio4\n";
+		cout << "[14] Desafio5\n";
+		cout << "[15] Sair do programa\n";
 		cout << "\n------------------------------------------\n";
 		cout << "\nEscolha uma das opções: ";
 		cin >> chose;
-
 		switch (chose) {
 			case 1: {
 				system("cls");
@@ -41,16 +43,18 @@ main() {
 				cout << "\tQual a maior idade?";
 				cout << "\n------------------------------------------\n";
 
-				cout << "Digite o nome da primeira pessoa: ";
-				cin >> name1;
-				cout << "Digite a idade da primeira pessoa: ";
-				cin >> pessoa1;
-				cout << "Digite o nome da segunda pessoa: ";
-				cin >> name2;
-				cout << "Digite a idade da segunda pessoa: ";
-				cin >> pessoa2;
+				do {
+					cout << "Digite o nome da primeira pessoa: ";
+					cin >> name1;
+					cout << "Digite a idade da primeira pessoa: ";
+					cin >> pessoa1;
+					cout << "Digite o nome da segunda pessoa: ";
+					cin >> name2;
+					cout << "Digite a idade da segunda pessoa: ";
+					cin >> pessoa2;
+					system("cls");
+				} while(pessoa1 < 0 && pessoa2 < 0);
 
-				system("cls");
 
 				cout << "\n------------------------------------------\n";
 
@@ -125,7 +129,7 @@ main() {
 				char operacao;
 				float num1, num2, result;
 				string opName;
-				
+
 				system("cls");
 
 				cout << "\tCalculadora";
@@ -179,20 +183,20 @@ main() {
 				cout << "\n------------------------------------------\n";
 				break;
 			}
-			
+
 			case 6: {
 				system("cls");
-				
+
 				float valueBuy, desconto;
-				
+
 				cout << "\tDesconto progressivo";
 				cout << "\n------------------------------------------\n";
-				
+
 				cout << "Digite o valor da compra: ";
 				cin >> valueBuy;
-				
+
 				system("cls");
-				
+
 				if(valueBuy > 500) {
 					desconto = valueBuy * 15 / 100;
 					valueBuy -= desconto;
@@ -206,24 +210,24 @@ main() {
 					valueBuy -= desconto;
 					cout << "O valor total da compra com um desconto de 5% fica: " << valueBuy;
 				}
-				
+
 				cout << "\n------------------------------------------\n";
 				break;
 			}
-			
+
 			case 7: {
 				system("cls");
-				
+
 				int mes;
-				
+
 				cout << "\tQuantos dias tem o mês";
 				cout << "\n------------------------------------------\n";
-				
+
 				cout << "Digite o mês em número que deseja saber o número de dias: ";
 				cin >> mes;
-				
+
 				system("cls");
-				
+
 				if(mes == 2) {
 					cout << "O mês tem 28 dias";
 				} else if(mes == 8 || mes % 2 != 0) {
@@ -231,29 +235,29 @@ main() {
 				} else {
 					cout << "O mês tem 30 dias";
 				}
-				
+
 				cout << "\n------------------------------------------\n";
 				break;
 			}
-			
+
 			case 8: {
 				system("cls");
-				
+
 				float soma = 0, nota[3], media;
-				
+
 				cout << "\tMédia do aluno";
 				cout << "\n------------------------------------------\n";
-				
+
 				for(int i = 0; i < 3; i++) {
 					cout << "Digite a " << i + 1 << "º nota: ";
 					cin  >> nota[i];
 				}
-				
+
 				for(int i = 0; i < 3; i++) {
 					soma += nota[i];
 				}
 				system("cls");
-				
+
 				media = soma / 3;
 				if (media < 4) {
 					cout << "Reprovado com média " << media << "!!!";
@@ -265,19 +269,19 @@ main() {
 				cout << "\n------------------------------------------\n";
 				break;
 			}
-			
+
 			case 9: {
 				system("cls");
-				
+
 				int num;
-				
+
 				cout << "\tPositivo ou negativo";
 				cout << "\n------------------------------------------\n";
-				
+
 				cout << "Digite um número: ";
 				cin >> num;
 				system("cls");
-				
+
 				if(num < 0) {
 					cout << "O número é negativo";
 				} else {
@@ -286,51 +290,56 @@ main() {
 				cout << "\n------------------------------------------\n";
 				break;
 			}
-			
+
 			case 10: {
 				system("cls");
-				
+
 				int size = 10;
-				
+
 				cout << "Digite o tamanho do quadrado: ";
 				cin >> size;
 				cout << endl;
-				
+
 				for(int i = 0; i < size; i++) {
-					for(int j = 0; j < size; j++){
+					for(int j = 0; j < size; j++) {
 						cout << "* ";
 					}
 					cout << endl;
 				}
-				
+
 				break;
 			}
 
 			case 11: {
 				system("cls");
-				
+
 				int size = 10;
-				
+
 				cout << "Digite o tamanho do quadrado: ";
 				cin >> size;
 				cout << endl;
-				
+
 				for(int i = 0; i < size; i++) {
-					for(int j = 0; j < size; j++){
+					for(int j = 0; j < size; j++) {
 						setColor("3" + to_string(i + 1));
 						cout << "* ";
 					}
 					cout << endl;
 				}
-				
+
 				setColor("0");
 				break;
 			}
 
 			case 12: {
+
+				break;
+			}
+
+			case 15: {
 				cout << "Saindo...";
 				break;
 			}
 		}
-	}
+	} while (chose != 15);
 }
