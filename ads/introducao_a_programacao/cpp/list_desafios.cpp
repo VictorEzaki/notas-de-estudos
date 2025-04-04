@@ -15,16 +15,17 @@ main() {
 
 	int chose;
 	do {
-		cout << "\n\n\n\tLista de Desagios";
-		cout << "\n------------------------------------------\n";
-		cout << "[1] Quadrado\n";
-		cout << "[2] Quadrado colorido\n";
-		cout << "[3] Metade pirâmide\n";
-		cout << "[4] Pirâmide\n";
-		cout << "[5] Pirâmide duppla\n";
-		cout << "[6] Sequência de pirâmide\n";
-		cout << "[10] Sair\n";
-		cout << "\n------------------------------------------\n";
+		cout << "\n+-----------------------------------------+\n";
+		cout << "|           - Lista de Desafios -         |";
+		cout << "\n|-----------------------------------------|\n";
+		cout << "| [1] Quadrado                            |\n";
+		cout << "| [2] Quadrado colorido                   |\n";
+		cout << "| [3] Metade pirâmide                     |\n";
+		cout << "| [4] Pirâmide                            |\n";
+		cout << "| [5] Pirâmide duppla                     |\n";
+		cout << "| [6] Sequência de pirâmide               |\n";
+		cout << "| [10] Sair                               |\n";
+		cout << "+-----------------------------------------+\n";
 		cout << "\nEscolha uma das opções: ";
 		cin >> chose;
 		switch (chose) {
