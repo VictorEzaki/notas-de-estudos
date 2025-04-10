@@ -25,6 +25,7 @@ main() {
 		cout << "| [4] Pirâmide                            |\n";
 		cout << "| [5] Pirâmide dupla                      |\n";
 		cout << "| [6] Sequência de pirâmide               |\n";
+		cout << "| [7] Jogo da forca                       |\n";
 		cout << "| [10] Sair                               |\n";
 		cout << "+-----------------------------------------+\n";
 		cout << "\nEscolha uma das opções: ";
@@ -216,6 +217,12 @@ main() {
 						cout << "*";
 					}
 				}
+				break;
+			}
+			
+			case 7: {
+				system("cls");
+				
 				break;
 			}
 
