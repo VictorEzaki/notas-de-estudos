@@ -1,36 +1,114 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+#include <stdio.h>
+#include <conio.h>
+#include <windows.h>
+
+#define KEY_UP 72
+#define KEY_DOWN 80
+#define KEY_ESC 27
+#define KEY_ENTER 13
 using namespace std;
 
 void setColor(const string& colorCode) {
 	cout << "\033[" << colorCode << "m";
 }
 
+void MoveToXY(int x,int y) {
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),(COORD) {
+		x,y
+	});
+}
+
+int menu() {
+	int x=28,y=4,a,ant_y=0;
+	system("cls");
+	cout << endl;
+	cout << "+-----------------------------------------+\n";
+	cout << "|           - Lista de Desafios -         |\n";
+	cout << "|-----------------------------------------|\n";
+	cout << "| [1] Quadrado..............              |\n";
+	cout << "| [2] Quadrado colorido.....              |\n";
+	cout << "| [3] Metade pirâmide.......              |\n";
+	cout << "| [4] Pirâmide..............              |\n";
+	cout << "| [5] Pirâmide dupla........              |\n";
+	cout << "| [6] Sequência de pirâmide.              |\n";
+	cout << "| [7] Jogo da forca.........              |\n";
+	cout << "| [10] Sair.................              |\n";
+	cout << "+-----------------------------------------+\n";
+	MoveToXY(x,y);
+	printf("<-");
+	do {
+		a=0;
+		if(kbhit())a=getch();
+		switch(a) {
+			case 72:  // Move a Seta para Cima
+				y--;
+				if( y < 4 )y = 11;
+				break;
+			case 80:  // Move a Seta para Baixo
+				y++;
+				if( y > 11 )y = 4;
+				break;
+		}
+		if( y != ant_y ) {
+			printf("\a");
+			MoveToXY(x,ant_y);
+			printf("  ");
+			MoveToXY(x,y);
+			printf("<-");
+		}
+		if( a == 13 && y == 4 ) {
+			return 1;
+		}
+		if( a == 13 && y == 5 ) {
+			return 2;
+		}
+		if( a == 13 && y == 6 ) {
+			return 3;
+		}
+		if( a == 13 && y == 7 ) {
+			return 4;
+		}
+		if( a == 13 && y == 8 ) {
+			return 5;
+		}
+		if( a == 13 && y == 9 ) {
+			return 6;
+		}
+		if( a == 13 && y == 10 ) {
+			return 7;
+		}
+		if( a == 13 && y == 11 ) {
+			return 10;
+		}
+		ant_y = y;
+	} while( 1 );
+}
+
+void menuExit() {
+	int a;
+	cout << endl;
+	cout << "Pressione [Enter] para voltar ao menu";
+	a=0;
+
+	while(a != 13) {
+		if(kbhit())a=getch();
+	}
+}
+
 main() {
 	system("chcp 65001");
 	cout << fixed << setprecision(2);
 
-	int size = 0;
+	system("cls");
 
-	int chose;
+	int size = 0, key = 0;
+
 	do {
-		cout << endl;
-		cout << "+-----------------------------------------+\n";
-		cout << "|           - Lista de Desafios -         |\n";
-		cout << "|-----------------------------------------|\n";
-		cout << "| [1] Quadrado                            |\n";
-		cout << "| [2] Quadrado colorido                   |\n";
-		cout << "| [3] Metade pirâmide                     |\n";
-		cout << "| [4] Pirâmide                            |\n";
-		cout << "| [5] Pirâmide dupla                      |\n";
-		cout << "| [6] Sequência de pirâmide               |\n";
-		cout << "| [7] Jogo da forca                       |\n";
-		cout << "| [10] Sair                               |\n";
-		cout << "+-----------------------------------------+\n";
-		cout << "\nEscolha uma das opções: ";
-		cin >> chose;
-		switch (chose) {
+		key = menu();
+		switch (key) {
 			case 1: {
 				system("cls");
 
@@ -52,7 +130,7 @@ main() {
 					}
 					cout << endl;
 				}
-
+				menuExit();
 				break;
 			}
 
@@ -80,6 +158,7 @@ main() {
 				}
 
 				setColor("0");
+				menuExit();
 				break;
 			}
 
@@ -103,6 +182,7 @@ main() {
 					}
 					cout << "\n";
 				}
+				menuExit();
 
 				break;
 			}
@@ -133,6 +213,7 @@ main() {
 
 					cout << "\n";
 				}
+				menuExit();
 
 				break;
 			}
@@ -183,6 +264,7 @@ main() {
 
 					cout << "\n";
 				}
+				menuExit();
 				break;
 			}
 
@@ -217,12 +299,14 @@ main() {
 						cout << "*";
 					}
 				}
+				menuExit();
 				break;
 			}
-			
+
 			case 7: {
 				system("cls");
-				
+				menuExit();
+
 				break;
 			}
 
@@ -230,11 +314,6 @@ main() {
 				cout << "Saindo...";
 				break;
 			}
-
-			default: {
-				cout << "Escolha uma opção válida";
-				break;
-			}
 		}
-	} while (chose != 10);
+	} while (key != 10);
 }
