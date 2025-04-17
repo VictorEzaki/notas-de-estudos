@@ -27,18 +27,9 @@ main() {
 			}
 		}
 
-		cout << "\n\nDigite uma letra: ";
-		cin >> letra;
-
-		for(int i = 0; i < word.length(); i++) {
-			if(letra == word[i] && positions[i] == -1) {
-				positions[i] = i;
-				acertos++;
-				break;
-			}else if(letra != word[i] && positions[i] != -1) {
-				erros++;
-				break;
-			}
+		if(acertos != 5) {
+			cout << "\n\nDigite uma letra: ";
+			cin >> letra;
 		}
 
 		if(acertos == 5) {
@@ -49,5 +40,21 @@ main() {
 			finish = true;
 			cout << "\nVocê atingiu o número máximo de erros.";
 		}
+
+
+		for(int i = 0; i < word.length(); i++) {
+			if(letra == word[i] && positions[i] == -1) {
+				positions[i] = i;
+				acertos++;
+				break;
+			}
+		}
+		for(int i = 0; i < word.length(); i++) {
+			if(letra != word[i] && positions[i] != -1) {
+				erros++;
+				break;
+			}
+		}
+
 	} while(!finish);
 }
