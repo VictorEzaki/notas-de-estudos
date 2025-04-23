@@ -64,7 +64,7 @@ main() {
 			cout << "\n\nParabéns, você acertou a palavra!!!";
 			finish = true;
 		}
-		if(erros >= 6) {
+		if(erros == 6) {
 			cout << "\n\nVocê atingiu o número máximo de erros.";
 			finish = true;
 		}
@@ -82,7 +82,7 @@ main() {
 			}
 		}
 		for(int i = 0; i < word.length(); i++) {
-			if(letra != word[i] && positions[i] != -1) {
+			if(letra != word[i]) {
 				erros++;
 				break;
 			}
