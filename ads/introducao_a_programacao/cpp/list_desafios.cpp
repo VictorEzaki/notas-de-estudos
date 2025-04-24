@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <conio.h>
 #include <windows.h>
+#include <ctime>
+#include <cstdlib>
 
 #define KEY_UP 72
 #define KEY_DOWN 80
@@ -22,6 +24,8 @@ void MoveToXY(int x,int y) {
 }
 
 int menu() {
+	srand(time(0));
+	
 	int x=28,y=4,a,ant_y=0;
 	system("cls");
 	cout << endl;
@@ -316,13 +320,16 @@ main() {
 				for(int i = 0; i < 100; i++) {
 					letras[i] = gerarCharRandom();
 					
+					cout << letras[i] << endl;
+					
 					if(letras[i] == 'A' || letras[i] == 'E' || letras[i] == 'I' || letras[i] == 'O' || letras[i] == 'U') {
 						qtdeVogais++;
 					}
 				}
 				
 				cout << "Foram geradas " << qtdeVogais << " vogais.";
-
+				
+				menuExit();
 				break;
 			}
 
