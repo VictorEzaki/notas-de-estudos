@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-main() {
+int main() {
 	system("chcp 65001");
 	cout<<"\n\n\n\n\n\n\n";
 	// Parte do telhado
@@ -59,4 +59,5 @@ main() {
 		cout << endl;
 	}
 	cout<<"\n\n\n\n\n\n\n";
+	return 0;
 }
