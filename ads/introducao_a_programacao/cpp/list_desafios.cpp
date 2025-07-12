@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <conio.h>
 #include <windows.h>
+#include <ctime>
+#include <cstdlib>
 
 #define KEY_UP 72
 #define KEY_DOWN 80
@@ -22,6 +24,8 @@ void MoveToXY(int x,int y) {
 }
 
 int menu() {
+	srand(time(0));
+	
 	int x=28,y=4,a,ant_y=0;
 	system("cls");
 	cout << endl;
@@ -34,7 +38,7 @@ int menu() {
 	cout << "| [4] Pirâmide..............              |\n";
 	cout << "| [5] Pirâmide dupla........              |\n";
 	cout << "| [6] Sequência de pirâmide.              |\n";
-	cout << "| [7] Jogo da forca.........              |\n";
+	cout << "| [7] CHAR aleatório+vogias.              |\n";
 	cout << "| [10] Sair.................              |\n";
 	cout << "+-----------------------------------------+\n";
 	MoveToXY(x,y);
@@ -96,6 +100,10 @@ void menuExit() {
 	while(a != 13) {
 		if(kbhit())a=getch();
 	}
+}
+
+char gerarCharRandom() {
+	return 'A' + rand() % 26;
 }
 
 main() {
@@ -305,8 +313,23 @@ main() {
 
 			case 7: {
 				system("cls");
+				
+				char letras[100];
+				int qtdeVogais = 0;
+				
+				for(int i = 0; i < 100; i++) {
+					letras[i] = gerarCharRandom();
+					
+					cout << letras[i] << endl;
+					
+					if(letras[i] == 'A' || letras[i] == 'E' || letras[i] == 'I' || letras[i] == 'O' || letras[i] == 'U') {
+						qtdeVogais++;
+					}
+				}
+				
+				cout << "Foram geradas " << qtdeVogais << " vogais.";
+				
 				menuExit();
-
 				break;
 			}
 
