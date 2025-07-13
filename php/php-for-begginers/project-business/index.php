@@ -6,13 +6,16 @@ $business = [
     'categories' => ["Testing", "PHP", "JavaScript"]
 ];
 
-function register($user) {
+require 'functions.php';
+
+function register($user)
+{
     // Create user record
     // Sign in user
     // Send welcome email
     // Redirect to dashboard
 }
 
+$heading = 'Home';
 
-
-require "index.view.php";
+require "views/index.view.php";
