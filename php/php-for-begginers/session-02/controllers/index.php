@@ -6,8 +6,6 @@ $business = [
     'categories' => ["Testing", "PHP", "JavaScript"]
 ];
 
-require 'functions.php';
-
 function register($user)
 {
     // Create user record
