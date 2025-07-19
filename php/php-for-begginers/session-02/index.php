@@ -8,8 +8,13 @@ $config = require 'config.php';
 
 $db = new Database($config['Database']);
 
-$posts = $db->query("select * from post")->fetchAll();
+$id = $_GET['id'];
+$query = "select * from post where id_post = :id";
 
-foreach($posts as $post) {
-    echo "<li>" . $post['title'] . " - " . $post['description'] . "</li>";
-}
+$posts = $db->query($query, ["id" => $id])->fetch();
+
+dd($posts);
+
+// foreach($posts as $post) {
+//     echo "<li>" . $post['title'] . " - " . $post['description'] . "</li>";
+// }
