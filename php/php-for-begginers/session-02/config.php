@@ -4,7 +4,7 @@ return [
     'Database' => [
         'host' => 'localhost',
         'port' => 3306,
-        'dbname' => 'myapp',
+        'dbname' => 'school',
         'charset' => 'utf8mb4'
     ]
 ];
