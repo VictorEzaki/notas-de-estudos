@@ -1,7 +1,9 @@
 <?php
 
-$config = require base_path('config.php');
-$db = new Database($config['Database']);
+use Core\App;
+use Core\Database;
+
+$db = App::resolve(Database::class);
 
 $currentUserID = 1;
 
@@ -9,7 +11,7 @@ $note = $db->query('SELECT * FROM note WHERE id_note = :id', ['id' => $_GET['id_
 
 authorize($note['id_user'] === $currentUserID);
 
-require view("notes/show.view.php", [
+view("notes/show.view.php", [
     'heading' => 'Note',
     'note' => $note
 ]);

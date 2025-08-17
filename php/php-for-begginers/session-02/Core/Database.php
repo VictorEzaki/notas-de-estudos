@@ -1,5 +1,10 @@
 <?php
 
+namespace Core;
+
+use PDO;
+use Core\Router;
+
 class Database
 {
     public $connection;
@@ -33,9 +38,9 @@ class Database
     public function findOrFail()
     {
         $result = $this->find();
-
+        $router = new Router();
         if (!$result) {
-            abort();
+            $router->abort();
         }
 
         return $result;
