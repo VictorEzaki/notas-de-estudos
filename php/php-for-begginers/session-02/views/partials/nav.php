@@ -10,7 +10,9 @@
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                         <a href="/" class="<?= thisPage('/') ?> rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white" aria-current="page">Home</a>
                         <a href="/about" class="<?= thisPage('/about') ?> rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white">About</a>
-                        <a href="/notes" class="<?= thisPage('/notes') ?> rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white">Notes</a>
+                        <?php if ($_SESSION['user'] ?? false) : ?>
+                            <a href="/notes" class="<?= thisPage('/notes') ?> rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white">Notes</a>
+                        <?php endif; ?>
                         <a href="/contact" class="<?= thisPage('/contact') ?> rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white">Contact</a>
                     </div>
                 </div>
@@ -29,14 +31,25 @@
                     <div class="relative ml-3">
                         <div>
                             <button type="button" class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-hidden focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                                <?php if($_SESSION['user'] ?? false) : ?>
+                                <?php if ($_SESSION['user'] ?? false) : ?>
                                     <img class="size-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
                                 <?php else : ?>
-                                    <a href="register" class="text-white">Register</a>
+                                    <a href="/register" class="<?= thisPage('/register') ?> rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white">Register</a>
+                                    <a href="/login" class="<?= thisPage('/login') ?> rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white">Log in</a>
                                 <?php endif; ?>
                             </button>
                         </div>
                     </div>
+
+                    <?php if ($_SESSION['user'] ?? false) : ?>
+                        <div class="ml-3">
+                            <form method="POST" action="/session">
+                                <input type="hidden" name="_method" value="DELETE">
+
+                                <button class="text-white">Log Out</button>
+                            </form>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="-mr-2 flex md:hidden">

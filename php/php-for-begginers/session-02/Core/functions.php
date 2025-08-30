@@ -19,13 +19,13 @@ function thisPage($value)
 }
 
 function abort($code = 404)
-    {
-        http_response_code($code);
+{
+    http_response_code($code);
 
-        require base_path("views/{$code}.php");
+    require base_path("views/{$code}.php");
 
-        die();
-    }
+    die();
+}
 
 function authorize($condition, $status = Response::FORBIDDEN)
 {
@@ -43,4 +43,23 @@ function view($path, $attributes = [])
 {
     extract($attributes);
     require base_path("views/{$path}");
+}
+
+
+function login($user)
+{
+    $_SESSION['user'] = [
+        'email' => $user['email']
+    ];
+
+    session_regenerate_id(true);
+}
+
+function logout()
+{
+    $_SESSION = [];
+    session_destroy();
+
+    $params = session_get_cookie_params();
+    setcookie('PHPSESSID', '', 3600, $params['path'], $params['domain'], $params['secure'], $params['httponly']);
 }
