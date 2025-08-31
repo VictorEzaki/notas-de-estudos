@@ -16,12 +16,10 @@
                  <div>
                      <label for="email" class="block text-sm/6 font-medium text-gray-900">Email address</label>
                      <div class="mt-2">
-                         <input id="email" type="email" name="email" required autocomplete="email" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
+                         <input id="email" type="email" name="email" required autocomplete="email" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                         value="<?= old('email') ?>" />
                      </div>
 
-                     <?php if (isset($errors['email'])) : ?>
-                         <p class="text-red-500 text-xs mt-2"><?= $errors['email'] ?></p>
-                     <?php endif; ?>
                  </div>
 
                  <div>
@@ -31,10 +29,13 @@
                      <div class="mt-2">
                          <input id="password" type="password" name="password" required autocomplete="current-password" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
                      </div>
-                     <?php if (isset($errors['password'])) : ?>
-                         <p class="text-red-500 text-xs mt-2"><?= $errors['password'] ?></p>
-                     <?php endif; ?>
                  </div>
+                 <?php if (isset($errors['password'])) : ?>
+                     <p class="text-red-500 text-xs mt-2"><?= $errors['password'] ?></p>
+                 <?php endif; ?>
+                 <?php if (isset($errors['email'])) : ?>
+                     <p class="text-red-500 text-xs mt-2"><?= $errors['email'] ?></p>
+                 <?php endif; ?>
 
                  <div>
                      <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Login</button>

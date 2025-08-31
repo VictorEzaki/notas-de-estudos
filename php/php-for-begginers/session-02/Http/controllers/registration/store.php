@@ -1,8 +1,11 @@
 <?php
 
 use Core\App;
+use Core\Authenticator;
 use Core\Database;
 use Core\Validator;
+
+$db = App::resolve(Database::class);
 
 $email = $_POST['email'];
 $password = $_POST['password'];
@@ -25,7 +28,6 @@ if (!empty($errors)) {
 }
 
 
-$db = App::resolve(Database::class);
 
 $user = $db->query('select * from user where email = :email', [
     'email' => $email
@@ -42,7 +44,7 @@ if ($user) {
         'password' => password_hash($password, PASSWORD_BCRYPT)
     ]);
 
-    login($user);
+    (new Authenticator)->login($user);
 
     header('location: /');
     exit();
