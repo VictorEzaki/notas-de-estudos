@@ -1,0 +1,15 @@
+# Ignorar dependências do Composer
+/vendor/
+
+# Ignorar configurações locais
+/.env
+/.idea/
+/.vscode/
+
+# Ignorar arquivos temporários
+*.log
+*.cache
+
+# Ignorar sistema do Mac e Windows
+.DS_Store
+Thumbs.db
