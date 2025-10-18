@@ -21,7 +21,7 @@
             </a>
         @endforeach
 
-        <div>
+        <div class="sm:flex sm:justify-end">
             {{ $jobs->links() }}
         </div>
     </div>
