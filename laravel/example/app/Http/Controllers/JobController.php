@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Job;
+use App\Models\User;
+use Illuminate\Container\Attributes\Auth;
+use Illuminate\Support\Facades\Auth as FacadesAuth;
+use Illuminate\Support\Facades\Auth as SupportFacadesAuth;
+use Illuminate\Support\Facades\Gate;
 
 class JobController extends Controller
 {
@@ -43,6 +48,16 @@ class JobController extends Controller
 
     public function edit(Job $job)
     {
+        Gate::define('edit-job', function (User $user, Job $job){
+            $job->employer->user->is($user);
+        });
+
+        if (FacadesAuth::guest()) {
+            redirect('/login');
+        }
+
+        Gate::authorize('edit-job', $job);
+        
         return view('jobs.edit', ['job' => $job]);
     }
 
