@@ -3,7 +3,14 @@
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\SessionUserController;
+use App\Jobs\TranslateJob;
 use Illuminate\Support\Facades\Route;
+
+Route::get('test', function() {
+    TranslateJob::dispatch();
+
+    return 'Done';
+});
 
 // Route::get('/', function () {
 //     return view('home');
