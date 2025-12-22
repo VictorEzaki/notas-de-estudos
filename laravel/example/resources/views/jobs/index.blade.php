@@ -16,7 +16,7 @@
                 </div>
 
                 <div>
-                    <strong>{{ $job['title'] }}: Pays {{ $job['salary'] }} per year.</strong>
+                    <strong class="text-laracasts">{{ $job['title'] }}: Pays {{ $job['salary'] }} per year.</strong>
                 </div>
             </a>
         @endforeach
