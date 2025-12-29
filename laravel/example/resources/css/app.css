@@ -5,6 +5,11 @@
 @source '../**/*.blade.php';
 @source '../**/*.js';
 
+@theme {
+  --color-laracasts: rgb(50, 138, 241);
+}
+
+
 @import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
